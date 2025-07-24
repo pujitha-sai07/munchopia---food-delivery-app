@@ -1,0 +1,260 @@
+.cart{
+    margin-top: 100px;
+}
+
+.cart-items-title{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
+    align-items: center;
+    color: grey;
+    font-size: max(1vw, 12px);
+}
+
+.cart-items-item{
+    margin: 10px 0px;
+    color: black;
+}
+
+.cart-items-item img{
+    width: 50px;
+}
+
+.cart hr{
+    height: 1px;
+    background-color: #e2e2e2;
+    border: none;
+}
+
+.cart-items-item .cross{
+     display: inline-block;
+    cursor: pointer;
+    font-size: 18px;
+     transition: transform 0.1s;
+}
+
+.cart-items-item .cross:hover{
+     transform: scaley(1.5);
+      color: orangered;
+      font-size: 25px;
+}
+
+
+.cart-items-wrapper {
+  animation: fadeIn 0.3s ease-in;
+}
+
+.removing {
+  animation: slideOutRight 2s ease forwards;
+  background-color: #a2a0a064;
+}
+
+@keyframes slideOutRight {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.cart-bottom{
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    gap: max(12vw, 20px);
+}
+
+.cart-total{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart-total-details{
+    display: flex;
+    justify-content: space-between;
+    color: #555;
+}
+
+.cart-total hr{
+    margin: 10px 0px;
+}
+
+.cart-total button{
+    border: none;
+    color: white;
+    background-color: rgb(255, 111, 0);
+    width: max(15vw, 200px);
+    padding: 12px 0px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cart-promocode{
+    flex: 1;
+}
+.cart-promocode p{
+    color: #555;
+}
+
+.cart-promocode-input{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eaeaea;
+    border-radius: 4px;
+}
+
+.cart-promocode-input input{
+    background: transparent;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+}
+
+.cart-promocode-input button{
+    width: max(10vw, 150px);
+    padding: 12px 5px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+@media (max-width: 750px){
+    .cart-bottom{
+        flex-direction: column-reverse;
+    }
+
+    .cart-promocode{
+        justify-content: start;
+    }
+}
+
+
+
+.cart-empty {
+  padding: 40px;
+  text-align: center;
+  animation: fadeUp 0.5s ease-in-out;
+  color: #555;
+  font-size: 1.2rem;
+}
+
+.cart-empty a {
+  color: rgb(255, 111, 0);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.cart-empty a:hover {
+  text-decoration: underline;
+}
+
+.cart-empty-suggestion {
+  font-size: 2rem;
+  margin-top: 20px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+
+.undo-message {
+  background: #fffbe6;
+  padding: 10px;
+  border: 1px solid #ffd700;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.undo-message button {
+  background: none;
+  color: #b8860b;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+
+.undo-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff8dc;
+  border: 1px solid #f1c40f;
+  padding: 12px 16px;
+  margin: 16px auto;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 8px;
+  animation: slideDown 0.3s ease-in-out;
+}
+
+.undo-bar span {
+  color: #333;
+  font-size: 16px;
+}
+
+.undo-bar button {
+  background-color: #f1c40f;
+  border: none;
+  color: black;
+  font-weight: bold;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.undo-bar button:hover {
+  background-color: #d4ac0d;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cart-items-wrapper.dragging {
+  background-color: #fff6f2;
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(255, 111, 0, 0.3);
+  transition: all 0.3s ease;
+}
